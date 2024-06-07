@@ -63,6 +63,7 @@ namespace PrimesInRange
                     dataTable.Rows.Add(i + 1, primes[i]);
                 }
 
+                // bind dataTable to DataGridView
                 dataGridViewPrimes.DataSource = dataTable;
 
                 // resize according to content

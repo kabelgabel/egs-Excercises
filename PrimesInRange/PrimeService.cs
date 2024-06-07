@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PrimesInRange
+﻿namespace PrimesInRange
 {
     public class PrimeService
     {
@@ -26,7 +20,7 @@ namespace PrimesInRange
         }
 
         /// <summary>
-        ///  ancient algorithm for finding all prime numbers up to any given limit
+        ///  ancient algorithm for finding all prime numbers up to provided limit
         /// </summary>
         private bool[] SieveOfEratosthenes(int limit)
         {

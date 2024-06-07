@@ -19,7 +19,8 @@ soll darunter angezeigt werden
 * Das zweite Eingabefeld ist ein DropDown, welches die Grundrechenarten (+,-,\*,/) beinhaltet
 * In das dritte Eingabefeld soll die zweite Zahl eingetragen werden können
 * Beim Klick auf den Button soll die Berechnung angestoßen und in einem Label angezeigt werden
--> siehe Projekt [/Calculator/]
+
+-> Lösung siehe unter [Calculator](./Calculator/)
 
 ## Übung 2 : Primzahlbestimmung
 
@@ -29,4 +30,5 @@ soll darunter angezeigt werden
 * Das zweite Eingabefeld gibt an, bis zu welcher Zahl die Primzahlen geprüft werden sollen
 * Die Primzahlen sollen in einem DataGrid sinnvoll aufgelistet werden
 * Die Primzahlberechnung soll möglichst performant stattfinden (ggf. muss eine leichter Algorithmus implementiert werden)
--> siehe Projekt [/PrimesInRange/]
+
+-> Lösung siehe unter [PrimesInRange](./PrimesInRange/)
