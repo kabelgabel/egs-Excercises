@@ -1,4 +1,5 @@
 using Calculator.Operators;
+using WinFormsUtil;
 
 namespace Calculator
 {
@@ -23,7 +24,8 @@ namespace Calculator
                     _operatorService.GetAllLiterals()
                     );
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 _err.Dump(ex);
             }
         }
@@ -34,7 +36,7 @@ namespace Calculator
         /// <returns>
         ///  True if every control passed the validation check, false otherwise.
         /// </returns>
-        private bool IsFormValid ()
+        private bool IsFormValid()
         {
             string decimalPattern = "^[+-]?([0-9]*[,.])?[0-9]+$";
             string decimalError = "Please enter a decimal number.";
@@ -64,7 +66,7 @@ namespace Calculator
 
             // if float casting was successful ...
             if (
-                float.TryParse(input1, out float operand1) && 
+                float.TryParse(input1, out float operand1) &&
                 float.TryParse(input2, out float operand2)
                 )
             {
@@ -74,9 +76,12 @@ namespace Calculator
                 {
                     result = op.run(operand1, operand2);
                 }
-                catch (DivideByZeroException ex)
+                catch (DivideByZeroException)
                 {
-                    errorProvider.SetError(textBoxInput2, "Cannot divide by zero. Please enter a non-zero value as second operand.");
+                    errorProvider.SetError(
+                        textBoxInput2,
+                        "Cannot divide by zero. Please enter a non-zero value as second operand."
+                        );
                     result = 0;
                 }
                 labelResult.Text = result.ToString();

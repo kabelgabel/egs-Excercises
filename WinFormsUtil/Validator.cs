@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Calculator
+namespace WinFormsUtil
 {
-    internal class Validator
+    public class Validator
     {
         private readonly ErrorProvider _errorProvider;
 
@@ -12,9 +12,14 @@ namespace Calculator
         }
 
         /// <summary>
-        ///  Determine whether the control content is valid and update its error message.
+        ///  Validates control content using a regular expression pattern
+        ///  and updates its error message accordingly.
         /// </summary>
-        public bool IsValid(Control control, string regexPattern, string errorMessage = "invalid input")
+        public bool IsValid(
+            Control control,
+            string regexPattern,
+            string errorMessage = "invalid input"
+            )
         {
             Regex regex = new Regex(regexPattern);
             Match match = regex.Match(control.Text);
@@ -28,4 +33,3 @@ namespace Calculator
         }
     }
 }
-
