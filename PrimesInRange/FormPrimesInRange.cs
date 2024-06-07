@@ -1,45 +1,33 @@
-using System.Data;
-using WinFormsUtil;
+﻿using System.Data;
 
 namespace PrimesInRange
 {
-    public partial class FormPrimesInRange : Form
+    internal class FormPrimesInRange : FormBasePrime
     {
-        private readonly PrimeService _primeService;
-        private readonly Validator _validator;
-        private readonly ErrorDumper _err;
 
-        public FormPrimesInRange()
+        protected override void ButtonCalculate_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-
-            _primeService = new();
-            _validator = new(errorProvider);
-            _err = new("Bitte wenden Sie sich an einen Administrator.");
-        }
-
-        /// <summary>
-        ///  Determine whether the form is valid by checking input values
-        ///  against regular expressions.
-        /// </summary>
-        /// <returns>
-        ///  True if every control passed the validation check, false otherwise.
-        /// </returns>
-        private bool IsFormValid()
-        {
-            string intPattern = "^[0-9]\\d*$";
-            string intError = "Please enter a whole number.";
-
-            return
-                _validator.IsValid(numericUpDownLower, intPattern, intError) &&
-                _validator.IsValid(numericUpDownUpper, intPattern, intError) &&
-                true;
+            try
+            {
+                if (IsFormValid())
+                {
+                    PopulateDataGridView(
+                        numericUpDownLower,
+                        numericUpDownUpper,
+                        dataGridViewResults
+                        );
+                }
+            }
+            catch (Exception ex)
+            {
+                _err.Dump(ex);
+            }
         }
 
         private void PopulateDataGridView(
             Control numLower,
             Control numUpper,
-            Control dataGridView
+            DataGridView dataGridView
             )
         {
             if (
@@ -64,31 +52,11 @@ namespace PrimesInRange
                 }
 
                 // bind dataTable to DataGridView
-                dataGridViewPrimes.DataSource = dataTable;
+                dataGridView.DataSource = dataTable;
 
                 // resize according to content
-                dataGridViewPrimes.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridViewPrimes.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-
-        }
-
-        private void buttonFindPrimes_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (IsFormValid())
-                {
-                    PopulateDataGridView(
-                        numericUpDownLower,
-                        numericUpDownUpper,
-                        dataGridViewPrimes
-                        );
-                }
-            }
-            catch (Exception ex)
-            {
-                _err.Dump(ex);
+                dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
 

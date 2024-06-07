@@ -1,6 +1,6 @@
 ﻿namespace PrimesInRange
 {
-    partial class FormPrimesInRange
+    public abstract partial class FormBasePrime
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,14 +33,14 @@
             numericUpDownUpper = new NumericUpDown();
             groupBoxLowerLimit = new GroupBox();
             groupBoxUpperLimit = new GroupBox();
-            buttonFindPrimes = new Button();
-            dataGridViewPrimes = new DataGridView();
+            ButtonCalculate = new Button();
+            dataGridViewResults = new DataGridView();
             errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)numericUpDownLower).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownUpper).BeginInit();
             groupBoxLowerLimit.SuspendLayout();
             groupBoxUpperLimit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPrimes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
@@ -82,58 +82,58 @@
             groupBoxUpperLimit.TabStop = false;
             groupBoxUpperLimit.Text = "Upper Limit";
             // 
-            // buttonFindPrimes
+            // ButtonCalculate
             // 
-            buttonFindPrimes.Location = new Point(18, 130);
-            buttonFindPrimes.Name = "buttonFindPrimes";
-            buttonFindPrimes.Size = new Size(125, 25);
-            buttonFindPrimes.TabIndex = 4;
-            buttonFindPrimes.Text = "Find Primes";
-            buttonFindPrimes.UseVisualStyleBackColor = true;
-            buttonFindPrimes.Click += buttonFindPrimes_Click;
+            ButtonCalculate.Location = new Point(18, 130);
+            ButtonCalculate.Name = "ButtonCalculate";
+            ButtonCalculate.Size = new Size(125, 25);
+            ButtonCalculate.TabIndex = 4;
+            ButtonCalculate.Text = "Calculate";
+            ButtonCalculate.UseVisualStyleBackColor = true;
+            ButtonCalculate.Click += ButtonCalculate_Click;
             // 
-            // dataGridViewPrimes
+            // dataGridViewResults
             // 
-            dataGridViewPrimes.AllowUserToAddRows = false;
-            dataGridViewPrimes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPrimes.Location = new Point(168, 12);
-            dataGridViewPrimes.Name = "dataGridViewPrimes";
-            dataGridViewPrimes.RowHeadersVisible = false;
-            dataGridViewPrimes.Size = new Size(200, 300);
-            dataGridViewPrimes.TabIndex = 5;
+            dataGridViewResults.AllowUserToAddRows = false;
+            dataGridViewResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewResults.Location = new Point(168, 12);
+            dataGridViewResults.Name = "dataGridViewResults";
+            dataGridViewResults.RowHeadersVisible = false;
+            dataGridViewResults.Size = new Size(200, 300);
+            dataGridViewResults.TabIndex = 5;
             // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
             // 
-            // FormPrimesInRange
+            // FormBasePrime
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(374, 317);
-            Controls.Add(dataGridViewPrimes);
-            Controls.Add(buttonFindPrimes);
+            Controls.Add(dataGridViewResults);
+            Controls.Add(ButtonCalculate);
             Controls.Add(groupBoxUpperLimit);
             Controls.Add(groupBoxLowerLimit);
-            Name = "FormPrimesInRange";
+            Name = "FormBasePrime";
             Text = "Ex.2: Find prime numbers";
             ((System.ComponentModel.ISupportInitialize)numericUpDownLower).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownUpper).EndInit();
             groupBoxLowerLimit.ResumeLayout(false);
             groupBoxUpperLimit.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPrimes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResults).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private NumericUpDown numericUpDownLower;
-        private NumericUpDown numericUpDownUpper;
-        private GroupBox groupBoxLowerLimit;
-        private GroupBox groupBoxUpperLimit;
-        private Button buttonFindPrimes;
-        private DataGridView dataGridViewPrimes;
-        private ErrorProvider errorProvider;
+        protected NumericUpDown numericUpDownLower;
+        protected NumericUpDown numericUpDownUpper;
+        protected GroupBox groupBoxLowerLimit;
+        protected GroupBox groupBoxUpperLimit;
+        protected Button ButtonCalculate;
+        protected DataGridView dataGridViewResults;
+        protected ErrorProvider errorProvider;
     }
 }
