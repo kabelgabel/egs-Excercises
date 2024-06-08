@@ -69,7 +69,7 @@
             groupInputs.Size = new Size(175, 85);
             groupInputs.TabIndex = 0;
             groupInputs.TabStop = false;
-            groupInputs.Text = "Inputs";
+            groupInputs.Text = "Eingaben";
             // 
             // textBoxInput2
             // 
@@ -103,7 +103,7 @@
             buttonCalculate.Name = "buttonCalculate";
             buttonCalculate.Size = new Size(75, 23);
             buttonCalculate.TabIndex = 4;
-            buttonCalculate.Text = "Calculate!";
+            buttonCalculate.Text = "Berechnen";
             buttonCalculate.UseVisualStyleBackColor = true;
             buttonCalculate.Click += buttonCalculate_Click;
             // 
@@ -128,7 +128,7 @@
             groupResult.Size = new Size(282, 43);
             groupResult.TabIndex = 2;
             groupResult.TabStop = false;
-            groupResult.Text = "Result";
+            groupResult.Text = "Ergebnis";
             // 
             // labelResult
             // 
@@ -148,7 +148,7 @@
             Controls.Add(groupOperation);
             Controls.Add(groupInputs);
             Name = "FormCalculator";
-            Text = "Ex1: Calculator";
+            Text = "Ü1: Taschenrechner";
             groupInputs.ResumeLayout(false);
             groupInputs.PerformLayout();
             groupOperation.ResumeLayout(false);

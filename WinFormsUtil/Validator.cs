@@ -18,7 +18,7 @@ namespace WinFormsUtil
         public bool IsValid(
             Control control,
             string regexPattern,
-            string errorMessage = "invalid input"
+            string errorMessage = "ungültige Einabe"
             )
         {
             Regex regex = new Regex(regexPattern);

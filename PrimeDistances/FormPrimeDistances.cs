@@ -7,7 +7,7 @@ namespace PrimeDistances
     {
         public FormPrimeDistances()
         {
-            Text = "Ü3: Primzahl Differenzbestimmung";
+            Text = "Ü3: Primzahl-Differenzbestimmung";
         }
 
         protected override void ButtonCalculate_Click(object sender, EventArgs e)

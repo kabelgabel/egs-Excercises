@@ -20,7 +20,7 @@ namespace PrimesInRange
         protected bool IsFormValid()
         {
             string intPattern = "^[0-9]\\d*$";
-            string intError = "Please enter a whole number.";
+            string intError = "Bitte geben Sie eine ganze Zahl ein.";
 
             return
                 _validator.IsValid(numericUpDownLower, intPattern, intError) &&

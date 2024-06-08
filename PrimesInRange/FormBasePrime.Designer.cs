@@ -70,7 +70,7 @@
             groupBoxLowerLimit.Size = new Size(150, 53);
             groupBoxLowerLimit.TabIndex = 2;
             groupBoxLowerLimit.TabStop = false;
-            groupBoxLowerLimit.Text = "Lower Limit";
+            groupBoxLowerLimit.Text = "Untergrenze";
             // 
             // groupBoxUpperLimit
             // 
@@ -80,7 +80,7 @@
             groupBoxUpperLimit.Size = new Size(150, 53);
             groupBoxUpperLimit.TabIndex = 3;
             groupBoxUpperLimit.TabStop = false;
-            groupBoxUpperLimit.Text = "Upper Limit";
+            groupBoxUpperLimit.Text = "Obergrenze";
             // 
             // ButtonCalculate
             // 
@@ -88,7 +88,7 @@
             ButtonCalculate.Name = "ButtonCalculate";
             ButtonCalculate.Size = new Size(125, 25);
             ButtonCalculate.TabIndex = 4;
-            ButtonCalculate.Text = "Calculate";
+            ButtonCalculate.Text = "Berechnen";
             ButtonCalculate.UseVisualStyleBackColor = true;
             ButtonCalculate.Click += ButtonCalculate_Click;
             // 

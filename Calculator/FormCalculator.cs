@@ -39,10 +39,10 @@ namespace Calculator
         private bool IsFormValid()
         {
             string decimalPattern = "^[+-]?([0-9]*[,.])?[0-9]+$";
-            string decimalError = "Please enter a decimal number.";
+            string decimalError = "Bitte geben Sie eine Zahl ein.";
 
             string operatorPattern = _operatorService.GetRegexPattern();
-            string operatorError = "Please select an operator.";
+            string operatorError = "Bitte wählen Sie eine Rechenoperation.";
 
             return
                 _validator.IsValid(textBoxInput1, decimalPattern, decimalError) &&
@@ -80,7 +80,7 @@ namespace Calculator
                 {
                     errorProvider.SetError(
                         textBoxInput2,
-                        "Cannot divide by zero. Please enter a non-zero value as second operand."
+                        "Teilung durch 0 ist nicht möglich. Bitte geben Sie einen gültigen zweiten Operanden ein."
                         );
                     result = 0;
                 }

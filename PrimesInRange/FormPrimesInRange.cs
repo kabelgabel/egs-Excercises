@@ -5,7 +5,7 @@ namespace PrimesInRange
     internal class FormPrimesInRange : FormBasePrime
     {
         public FormPrimesInRange() {
-            Text = "Ex.2: Find prime numbers";
+            Text = "Ü2: Primzahl-Bestimmung";
         }
 
         protected override void ButtonCalculate_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace PrimesInRange
                 )
             {
                 String columnNameIndex = "#";
-                String columnNamePrimes = "PrimeNumbers";
+                String columnNamePrimes = "Primzahlen";
 
                 List<int> primes = _primeService.GetPrimesInRange(
                     lowerLimit,
