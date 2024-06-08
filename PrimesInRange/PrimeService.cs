@@ -20,13 +20,16 @@
         }
 
         /// <summary>
-        ///  ancient algorithm for finding all prime numbers up to provided limit
+        ///  An ancient algorithm for finding all prime numbers up to provided limit.
         /// </summary>
+        /// <returns>
+        ///  A boolean array where the index of a true value indicates a prime number.
+        /// </returns>
         private bool[] SieveOfEratosthenes(int limit)
         {
             bool[] isPrime = new bool[limit + 1];
             // is it possible to init a bool array with true?
-            for (int i = 2; i < limit; i++) isPrime[i] = true;
+            for (int i = 2; i <= limit; i++) isPrime[i] = true;
 
             // walk along the still unmarked numbers
             for (int p = 2; p * p <= limit; p++)
@@ -42,6 +45,28 @@
                 }
             }
             return isPrime;
+        }
+
+        public Dictionary<int, int> GetPrimeDistances(List<int> primes) {
+            Dictionary<int, int> distances = new();
+
+            if (primes.Count >= 2)
+            {
+                for (int i = 1; i < primes.Count; i++)
+                {
+                    int diff = primes[i] - primes[i-1];
+                    // if key doesn't exist, create it
+                    if (!distances.ContainsKey(diff)) distances.Add(diff,0);
+                    distances[diff]++;
+                }
+            } else
+            {
+                // list of primes was too short
+                // since 0 is theoretically never a key of the dict,
+                // this edge case can be interpreted/handled as error/fallback
+                distances.Add(0,0);
+            }
+            return distances;
         }
     }
 }

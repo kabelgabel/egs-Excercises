@@ -116,7 +116,7 @@
             Controls.Add(groupBoxUpperLimit);
             Controls.Add(groupBoxLowerLimit);
             Name = "FormBasePrime";
-            Text = "Ex.2: Find prime numbers";
+            Text = "FormBasePrime";
             ((System.ComponentModel.ISupportInitialize)numericUpDownLower).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownUpper).EndInit();
             groupBoxLowerLimit.ResumeLayout(false);

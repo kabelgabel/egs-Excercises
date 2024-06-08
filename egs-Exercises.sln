@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimesInRange", "PrimesInRa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsUtil", "WinFormsUtil\WinFormsUtil.csproj", "{ABDA39E3-B536-4815-A49B-CFA534EEA309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightsTour", "KnightsTour\KnightsTour.csproj", "{47D6055B-647F-4D0B-9104-172DAACE833F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnightsTour", "KnightsTour\KnightsTour.csproj", "{47D6055B-647F-4D0B-9104-172DAACE833F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeDistances", "PrimeDistances\PrimeDistances.csproj", "{1B8BC92F-F8F2-438D-8F19-A5923F107C6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{47D6055B-647F-4D0B-9104-172DAACE833F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D6055B-647F-4D0B-9104-172DAACE833F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D6055B-647F-4D0B-9104-172DAACE833F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8BC92F-F8F2-438D-8F19-A5923F107C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8BC92F-F8F2-438D-8F19-A5923F107C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8BC92F-F8F2-438D-8F19-A5923F107C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8BC92F-F8F2-438D-8F19-A5923F107C6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

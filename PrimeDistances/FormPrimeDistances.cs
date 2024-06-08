@@ -1,11 +1,13 @@
-ï»¿using System.Data;
+using PrimesInRange;
+using System.Data;
 
-namespace PrimesInRange
+namespace PrimeDistances
 {
-    internal class FormPrimesInRange : FormBasePrime
+    public partial class FormPrimeDistances : FormBasePrime
     {
-        public FormPrimesInRange() {
-            Text = "Ex.2: Find prime numbers";
+        public FormPrimeDistances()
+        {
+            Text = "Ü3: Primzahl Differenzbestimmung";
         }
 
         protected override void ButtonCalculate_Click(object sender, EventArgs e)
@@ -38,21 +40,28 @@ namespace PrimesInRange
                 int.TryParse(numUpper.Text, out int upperLimit)
                 )
             {
-                String columnNameIndex = "#";
-                String columnNamePrimes = "PrimeNumbers";
+                String columnNameDelta = "Differenz";
+                String columnNameAmount = "Anzahl";
 
                 List<int> primes = _primeService.GetPrimesInRange(
                     lowerLimit,
                     upperLimit
                     );
-                var dataTable = new DataTable();
-                dataTable.Columns.Add(columnNameIndex, typeof(int));
-                dataTable.Columns.Add(columnNamePrimes, typeof(int));
 
-                for (int i = 0; i < primes.Count; i++)
+                Dictionary<int, int> distances = _primeService.GetPrimeDistances(primes);
+
+                var dataTable = new DataTable();
+                dataTable.Columns.Add(columnNameDelta, typeof(int));
+                dataTable.Columns.Add(columnNameAmount, typeof(int));
+
+                for (int i = 0; i < distances.Count; i++)
                 {
-                    dataTable.Rows.Add(i + 1, primes[i]);
+                    int key = distances.Keys.ElementAt(i);
+                    dataTable.Rows.Add(key, distances[key]);
                 }
+
+                // enable sorting on delta column
+                dataTable.DefaultView.Sort = columnNameDelta + " DESC";
 
                 // bind dataTable to DataGridView
                 dataGridView.DataSource = dataTable;
