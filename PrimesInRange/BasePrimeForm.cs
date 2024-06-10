@@ -2,19 +2,17 @@ using WinFormsUtil;
 
 namespace PrimesInRange
 {
-    public abstract partial class FormBasePrime : Form
+    public abstract partial class BasePrimeForm : Form
     {
         protected readonly PrimeService _primeService;
         protected readonly Validator _validator;
-        protected readonly ErrorDumper _err;
 
-        public FormBasePrime()
+        public BasePrimeForm()
         {
             InitializeComponent();
 
             _primeService = new();
             _validator = new(errorProvider);
-            _err = new("Bitte wenden Sie sich an einen Administrator.");
         }
 
         protected bool IsFormValid()
@@ -24,8 +22,7 @@ namespace PrimesInRange
 
             return
                 _validator.IsValid(numericUpDownLower, intPattern, intError) &&
-                _validator.IsValid(numericUpDownUpper, intPattern, intError) &&
-                true;
+                _validator.IsValid(numericUpDownUpper, intPattern, intError);
         }
 
         protected abstract void ButtonCalculate_Click(object sender, EventArgs e);

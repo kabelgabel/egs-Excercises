@@ -56,7 +56,7 @@
                 {
                     int diff = primes[i] - primes[i-1];
                     // if key doesn't exist, create it
-                    if (!distances.ContainsKey(diff)) distances.Add(diff,0);
+                    distances.TryAdd(diff, 0);
                     distances[diff]++;
                 }
             } else

@@ -3,17 +3,14 @@ using System.Data;
 
 namespace PrimeDistances
 {
-    public partial class FormPrimeDistances : FormBasePrime
+    internal class PrimeDistancesForm : BasePrimeForm
     {
-        public FormPrimeDistances()
+        public PrimeDistancesForm()
         {
             Text = "Ü3: Primzahl-Differenzbestimmung";
         }
-
         protected override void ButtonCalculate_Click(object sender, EventArgs e)
         {
-            try
-            {
                 if (IsFormValid())
                 {
                     PopulateDataGridView(
@@ -22,11 +19,6 @@ namespace PrimeDistances
                         dataGridViewResults
                         );
                 }
-            }
-            catch (Exception ex)
-            {
-                _err.Dump(ex);
-            }
         }
 
         private void PopulateDataGridView(
@@ -71,6 +63,5 @@ namespace PrimeDistances
                 dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
-
     }
 }

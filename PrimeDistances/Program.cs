@@ -1,3 +1,5 @@
+using WinFormsUtil;
+
 namespace PrimeDistances
 {
     internal static class Program
@@ -8,10 +10,18 @@ namespace PrimeDistances
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new FormPrimeDistances());
+            ErrorDumper _err = new ErrorDumper();
+            try
+            {
+                // To customize application configuration such as set high DPI settings or default font,
+                // see https://aka.ms/applicationconfiguration.
+                ApplicationConfiguration.Initialize();
+                Application.Run(new PrimeDistancesForm());
+            }
+            catch (Exception ex)
+            {
+                _err.Dump(ex);
+            }
         }
     }
 }

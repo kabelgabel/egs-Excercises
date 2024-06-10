@@ -1,6 +1,6 @@
 ﻿namespace PrimesInRange
 {
-    public abstract partial class FormBasePrime
+    public abstract partial class BasePrimeForm
     {
         /// <summary>
         ///  Required designer variable.

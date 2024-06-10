@@ -2,28 +2,22 @@
 
 namespace PrimesInRange
 {
-    internal class FormPrimesInRange : FormBasePrime
+    internal class PrimesInRangeForm : BasePrimeForm
     {
-        public FormPrimesInRange() {
+        public PrimesInRangeForm()
+        {
             Text = "Ü2: Primzahl-Bestimmung";
         }
 
         protected override void ButtonCalculate_Click(object sender, EventArgs e)
         {
-            try
+            if (IsFormValid())
             {
-                if (IsFormValid())
-                {
-                    PopulateDataGridView(
-                        numericUpDownLower,
-                        numericUpDownUpper,
-                        dataGridViewResults
-                        );
-                }
-            }
-            catch (Exception ex)
-            {
-                _err.Dump(ex);
+                PopulateDataGridView(
+                    numericUpDownLower,
+                    numericUpDownUpper,
+                    dataGridViewResults
+                    );
             }
         }
 
@@ -62,6 +56,5 @@ namespace PrimesInRange
                 dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
-
     }
 }
