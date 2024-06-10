@@ -4,7 +4,7 @@
     {
         private readonly string _topMessage;
 
-        public ErrorDumper(String m)
+        public ErrorDumper(String m = "Bitte wenden Sie sich an einen Administrator.")
         {
             _topMessage = m + Environment.NewLine;
         }

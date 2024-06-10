@@ -1,13 +1,14 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
+using Calculator.Operators;
 
-namespace Calculator.Operators
+namespace Calculator
 {
-    public class OperatorService
+    public class Calculator
     {
         private List<IOperator> _operators;
 
-        public OperatorService()
+        public Calculator()
         {
             _operators = new List<IOperator>
             {
@@ -18,7 +19,7 @@ namespace Calculator.Operators
             };
         }
 
-        public IOperator GetOperatorByLiteral(string literal)
+        private IOperator GetOperatorByLiteral(string literal)
         {
             foreach (IOperator o in _operators)
             {
@@ -40,7 +41,7 @@ namespace Calculator.Operators
             return literals;
         }
 
-        public String GetRegexPattern()
+        public string GetRegexPattern()
         {
             StringBuilder sb = new();
             foreach (IOperator operatorInstance in _operators)
@@ -48,11 +49,17 @@ namespace Calculator.Operators
                 sb.Append(operatorInstance.ToString());
             }
 
-            return (
+            return
                 "^[" +
                 Regex.Replace(sb.ToString(), "([\"+*])", @"\\$1") +
                 "]$"
-                );
+                ;
+        }
+
+        public float Calculate(float a, float b, string opString)
+        {
+            IOperator op = GetOperatorByLiteral(opString);
+            return op.run(a, b); ;
         }
 
     }
