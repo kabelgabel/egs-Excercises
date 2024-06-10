@@ -51,4 +51,7 @@ soll darunter angezeigt werden
     * Die Logik dessen ist in der Anwendung abzubilden
 * Tipps: Rekursion ist nötig und ein Algorithmus ist empfehlenswert
 
+-> Lösung siehe unter [KnightsTour](./KnightsTour/)
+-> Springer-Icon by [Flaticon](https://www.flaticon.com/free-icon/strategy_2449927)
+
 
